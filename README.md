@@ -1,24 +1,25 @@
-# Params
+# Overview
 
-**TODO: Add description**
+Just a fun little Elixir exercise!
 
-## Installation
+1. [Install Elixir](http://elixir-lang.org/install.html)
+1. Clone this repo
+1. Run `mix test`
+1. Run `iex -S mix` and type `h Params` for help
+1. Get the tests passing!
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+## The Challenge
 
-  1. Add `params` to your list of dependencies in `mix.exs`:
+When processing requests with a web server, we often need to filter sensitive
+parameters from our server logs — we wouldn't want to accidentally store social
+security numbers or passwords in plain text on our servers!
 
-    ```elixir
-    def deps do
-      [{:params, "~> 0.1.0"}]
-    end
-    ```
+Usually these params will come into the server as JSON, but we'll skip that part
+for now. The challenge is to get the tests passing and to utilize the
+application config to determine which params to filter.
 
-  2. Ensure `params` is started before your application:
-
-    ```elixir
-    def application do
-      [applications: [:params]]
-    end
-    ```
-
+_Note: you may want to simplify the tests a bit as you get started. For example,
+perhaps comment out the test in "params_test.exs" and work on getting just the
+doc tests working first. Then, inside "params_test.exs", comment out everything
+inside the `params` and `filtered_params` maps except for the password, and
+uncomment a new params each time the tests are green again._
